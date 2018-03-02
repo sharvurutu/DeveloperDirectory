@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css" type="text/css">
+    <title>Blue Developer Directory</title>
+    <script type="text/javascript">
+        function initStorage() {
+            function saveName() {
+                var name = document.getElementById('name');
+                localStorage.setItem('name', name.value);
+            }
+
+            function saveEmail() {
+                var email = document.getElementById('email');
+                localStorage.setItem('email', email.value);
+            }
+
+            //Run functions
+            saveName();
+            saveEmail();
+        }
+
+        function displayName() {
+            if (localStorage.getItem('name') != null) {
+                document.write('Welcome Back, ' + localStorage.getItem('name'));
+            }
+        }
+
+        function showText() {
+            if (localStorage.getItem('email') == null) {
+                document.write('<p>Please enter your email address</p>');
+            } else {
+                document.write('<p><strong>Subscribed Email:</strong> ' + localStorage.getItem('email') + '</p> ');
+            }
+        }
+
+        function clearAll() {
+            localStorage.clear();
+            window.location.reload()
+        }
+    </script>
+</head>
+
+<body>
+    <div id="container">
+        <header>
+            <h1>
+                Developer Directory</h1>
+            <h2>Find A Developer
+                <span class="white-text">NOW</span>
+            </h2>
+        </header>
+
+        <nav id="menu">
+            <ul>
+                <li class="menuitem">
+                    <a href="index.html">Home</a>
+                </li>
+                <li class="menuitem">
+                    <a href="about.html">About Us</a>
+                </li>
+                <li class="menuitem">
+                    <a href="browse.html">Browse Developers</a>
+                </li>
+                <li class="menuitem">
+                    <a href="register.html">Register As Developer</a>
+                </li>
+                <li class="menuitem">
+                    <a href="contact.html">Contact Us</a>
+                </li>
+            </ul>
+            <div id="displayname">
+                <script type="text/javascript">
+                    displayName();
+                </script>
+            </div>
+        </nav>
+
+        <aside>
+            <nav id="leftmenu">
+                <h3>Links</h3>
+                <ul>
+                    <li>
+                        <a href="browse.html">Java</a>
+                    </li>
+                    <li>
+                        <a href="browse.html">Spring Framework</a>
+                    </li>
+                    <li>
+                        <a href="browse.html">Hibernate</a>
+                    </li>
+                    <li>
+                        <a href="browse.html">MySQL</a>
+                    </li>
+                    <li>
+                        <a href="browse.html">HTML5/CSS3</a>
+                    </li>
+                    <li>
+                        <a href="browse.html">Bootstrap</a>
+                    </li>
+                    <li>
+                        <a href="browse.html">Javascript</a>
+                    </li>
+                </ul>
+
+                <div>
+                    <br>
+                    <br>
+                    <h3>Newsletter</h3>
+                    <script type="text/javascript">
+                        showText();
+                    </script>
+                    <form id="news" onsubmit="initStorage()">
+                        Name:
+                        <input type="text" id="name" name="name"> Email:
+                        <input type="email" id="email" name="email">
+                        <input type="submit" value="Send">
+                        <a href="#" onClick="clearAll()">Clear</a>
+                    </form>
+                </div>
+            </nav>
+
+        </aside>
+
+        <section>
+            <h2>Welcome to Developer Directory!!! </h2>
+            <img class="float" src="images/web.jpg" alt="web developer directory">
+            <h3>WHO ARE WE:</h3>
+            <p>We are a fictional website and service that list top web developers around the world. Search and browse fictional
+                web developers on our website absolutley FREE!</p>
+            <h3>WHAT SKILLS OUR DEVELOPER HAVE:</h3>
+            <p>Our listed fictional web developers skill ranges from Graphic design with Photoshop, Illustrator and Fireworks
+                to markup languages like HTML5, XHTML and XML to programming languages such as Javascript, Java, Spring and
+                Tyescript
+        </section>
+
+        <section>
+            <h2>Latest Blue Developers</h2>
+            <div class="developer">
+                <h4>Rutu</h4>
+                <ul>
+                    <li>
+                        <strong>Location: </strong> Bengaluru</li>
+                    <li>
+                        <strong>Skills: </strong> Spring boot, Hibernate, JPA</li>
+                    <li>
+                        <strong>Availability:</strong> Full-Time
+                </ul>
+                <a href="#">View Profile</a>
+            </div>
+            <!--developer end-->
+
+            <div class="developer">
+                <h4>Sharvu</h4>
+                <ul>
+                    <li>
+                        <strong>Location: </strong> Pune</li>
+                    <li>
+                        <strong>Skills: </strong> Java, Spring framework, JWT</li>
+                    <li>
+                        <strong>Availability:</strong> Full-Time
+                </ul>
+                <a href="#">View Profile</a>
+            </div>
+            <!--developer end-->
+
+            <div class="developer">
+                <h4>Gargi</h4>
+                <ul>
+                    <li>
+                        <strong>Location: </strong> Mumbai</li>
+                    <li>
+                        <strong>Skills: </strong> HTML5, CSS3, Bootstrap</li>
+                    <li>
+                        <strong>Availability:</strong> Full-Time
+                </ul>
+                <a href="#">View Profile</a>
+            </div>
+            <!--developer end-->
+
+            <div class="developer">
+                <h4>Purva</h4>
+                <ul>
+                    <li>
+                        <strong>Location: </strong> Pune</li>
+                    <li>
+                        <strong>Skills: </strong> MongoDB, MySQL, Oracle</li>
+                    <li>
+                        <strong>Availability:</strong> Full-Time
+                </ul>
+                <a href="#">View Profile</a>
+            </div>
+            <!--developer end-->
+
+        </section>
+    </div>
+    <!--container end-->
+    <div style="clear:both;"></div>
+    <footer>
+        Copyright &copy; 2018, Developer Directory
+    </footer>
+</body>
+
+</html>
