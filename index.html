@@ -3,43 +3,8 @@
 
 <head>
     <link rel="stylesheet" href="css/style.css" type="text/css">
-    <title>Blue Developer Directory</title>
-    <script type="text/javascript">
-        function initStorage() {
-            function saveName() {
-                var name = document.getElementById('name');
-                localStorage.setItem('name', name.value);
-            }
-
-            function saveEmail() {
-                var email = document.getElementById('email');
-                localStorage.setItem('email', email.value);
-            }
-
-            //Run functions
-            saveName();
-            saveEmail();
-        }
-
-        function displayName() {
-            if (localStorage.getItem('name') != null) {
-                document.write('Welcome Back, ' + localStorage.getItem('name'));
-            }
-        }
-
-        function showText() {
-            if (localStorage.getItem('email') == null) {
-                document.write('<p>Please enter your email address</p>');
-            } else {
-                document.write('<p><strong>Subscribed Email:</strong> ' + localStorage.getItem('email') + '</p> ');
-            }
-        }
-
-        function clearAll() {
-            localStorage.clear();
-            window.location.reload()
-        }
-    </script>
+    <title>Developer Directory</title>
+    <script src="js/storage.js" type="text/javascript"></script>
 </head>
 
 <body>
@@ -198,7 +163,7 @@
     <!--container end-->
     <div style="clear:both;"></div>
     <footer>
-        Copyright &copy; 2018, Developer Directory
+        Copyright 2018, &copy; Rutu Developer Directory <a href="info.html">Info</a>
     </footer>
 </body>
 

@@ -216,9 +216,14 @@ dev-table tr,table.dev-table td{
 	border-bottom: 1px dashed #000000;
 }
 
+ #map {
+            width: 400px;
+            height: 250px;
+            float: left;
+        }
 footer{
 	width:100%;
-	background: #223b6e;
+	background: #2a6cf1;
 	color:#fff;
 	height:30px;
 	text-align:center;
